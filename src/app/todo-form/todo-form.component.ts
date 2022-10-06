@@ -8,7 +8,7 @@ import { Todo } from '../todo';
 })
 export class TodoFormComponent implements OnInit {
   todo: Todo = {} as Todo;
-  @Output() addTodo = new EventEmitter<Todo>();
+  @Output() save = new EventEmitter<Todo>();
 
   addNewTodo(): void {
     if (this.todo.task == null || this.todo.task == '') {
@@ -17,7 +17,7 @@ export class TodoFormComponent implements OnInit {
       let newTodo: Todo = {} as Todo;
       newTodo.completed = false;
       newTodo.task = this.todo.task;
-      this.addTodo.emit(newTodo);
+      this.save.emit(newTodo);
       this.todo = {} as Todo;
     }
   }
