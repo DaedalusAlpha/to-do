@@ -1,14 +1,16 @@
-<div class="list">
-  <h2>To-Do List</h2>
-  <p>A place to store your to-dos</p>
-  <form>
-    <input
-      class="largeInput"
-      name="filter"
-      placeholder="Filter your to-dos"
-      [(ngModel)]="todoFilter"
-    />
-  </form>
+<div class="app">
+  <div class="list">
+    <h2>To-Do List</h2>
+    <p>A place to store your to-dos</p>
+    <form>
+      <input
+        class="largeInput"
+        name="filter"
+        placeholder="Filter your to-dos"
+        [(ngModel)]="todoFilter"
+      />
+    </form>
+  </div>
   <app-todo-item
     *ngFor="let t of todos; let i = index"
     [todo]="t"
@@ -17,9 +19,8 @@
     (complete)="completeTodo(i)"
     (remove)="removeTodo(i)"
   ></app-todo-item>
-
-  <div id="congrats" *ngIf="checkComplete()">
-    Congratulations! You've completed all your tasks.
+  <div style="margin-left:10px" *ngIf="checkComplete()">
+    <h4>Congratulations! You've completed all your tasks.</h4>
   </div>
   <div class="add">
     <app-todo-form (addTodo)="newTodo($event)"></app-todo-form>

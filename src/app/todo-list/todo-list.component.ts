@@ -27,7 +27,7 @@ export class TodoListComponent implements OnInit {
     },
     {
       task: 'Finish this assignment',
-      completed: false,
+      completed: true,
     },
   ];
 
