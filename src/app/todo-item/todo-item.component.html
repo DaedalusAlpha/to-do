@@ -1,0 +1,10 @@
+<div class="container" *ngIf="visible">
+  {{ ind + 1 }}.
+  <button class="complete" (click)="completeTodo()" *ngIf="!todo.completed">
+    Complete
+  </button>
+  <span class="task" [ngClass]="todo.completed ? 'taskComplete' : ''">{{
+    todo.task
+  }}</span>
+  <button class="remove" (click)="removeTodo()">X</button>
+</div>

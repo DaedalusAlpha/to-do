@@ -1,0 +1,27 @@
+<div class="list">
+  <h2>To-Do List</h2>
+  <p>A place to store your to-dos</p>
+  <form>
+    <input
+      class="largeInput"
+      name="filter"
+      placeholder="Filter your to-dos"
+      [(ngModel)]="todoFilter"
+    />
+  </form>
+  <app-todo-item
+    *ngFor="let t of todos; let i = index"
+    [todo]="t"
+    [ind]="i"
+    [visible]="checkFilter(t.task)"
+    (complete)="completeTodo(i)"
+    (remove)="removeTodo(i)"
+  ></app-todo-item>
+
+  <div id="congrats" *ngIf="checkComplete()">
+    Congratulations! You've completed all your tasks.
+  </div>
+  <div class="add">
+    <app-todo-form (addTodo)="newTodo($event)"></app-todo-form>
+  </div>
+</div>
