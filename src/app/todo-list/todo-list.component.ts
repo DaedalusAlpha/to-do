@@ -9,26 +9,11 @@ import { Todo } from '../todo';
 export class TodoListComponent implements OnInit {
   todoFilter: string = '';
   todos: Todo[] = [
-    {
-      task: 'Take out the trash',
-      completed: false,
-    },
-    {
-      task: 'Get groceries',
-      completed: true,
-    },
-    {
-      task: 'Watch LotR extended edition',
-      completed: true,
-    },
-    {
-      task: 'Watch LotR extended edition again',
-      completed: false,
-    },
-    {
-      task: 'Finish this assignment',
-      completed: true,
-    },
+    { task: 'Take out the trash', completed: false },
+    { task: 'Get groceries', completed: true },
+    { task: 'Watch LotR extended edition', completed: true },
+    { task: 'Watch LotR extended edition again', completed: false },
+    { task: 'Finish this assignment', completed: true },
   ];
 
   // Function to remove a todo from the array.
