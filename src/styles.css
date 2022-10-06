@@ -55,7 +55,8 @@ input {
 
 .remove {
   float: right;
-  background: #eee;
+  background: white;
+  border: none;
 }
 
 .task {
